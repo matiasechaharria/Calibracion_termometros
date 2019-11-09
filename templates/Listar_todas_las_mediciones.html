@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+      <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Listado de mediciones en la base de datos (<a href = "{{ url_for('Alta_medicion') }}">cargar medicion
+         </a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+               <th>Numero de medicion  </th>
+               <th>temperatura ambiente</th>
+               <th>humedad             </th>
+               <th>persona_id          </th>
+               <th>equipo          </th>
+               <th>Sonda          </th>
+               <th>Certificado     </th>
+               <th>Certificado INTI </th>
+               <th>Temp patron 0 </th>
+               <th>Temp patron 1 </th>
+               <th>Temp patron 2 </th>
+               <th>Temp patron 3 </th>
+               <th>Temp patron 4 </th>
+               <th>Temp patron 5 </th>
+               <th>Temp patron 6 </th>
+               <th>Temp patron 7 </th>
+               <th>Temp patron 8 </th>
+               <th>Temp patron 9  </th>
+               <th>Temp ebp 0     </th>
+               <th>Temp ebp 1     </th>
+               <th>Temp ebp 2     </th>
+               <th>Temp ebp 3     </th>
+               <th>Temp ebp 4     </th>
+               <th>Temp ebp 5     </th>
+               <th>Temp ebp 6      </th>
+               <th>Temp ebp 7     </th>
+               <th>Temp ebp 8     </th>
+               <th>Temp ebp 9     </th>
+
+
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for medicion in mediciones %}
+               <tr>
+                 <td>{{ medicion.id }}</td>
+                  <td>{{ medicion.temp_ambiente }}</td>
+                  <td>{{ medicion.humedad       }}</td>
+                  <td>{{ medicion.persona_id       }}</td>
+                  <td>{{ medicion.equipo.nombre       }}</td>
+                  <td>{{ medicion.sonda.nombre       }}</td>
+                  <td>{{ medicion.certificado.id       }}</td>
+                  <td>{{ medicion.certificado.certificado_INTI.id       }}</td>
+                <td>{{medicion.temp_pat0}}</td>
+                <td>{{medicion.temp_pat1}}</td>
+                <td>{{medicion.temp_pat2}}</td>
+                <td>{{medicion.temp_pat3}}</td>
+                <td>{{medicion.temp_pat4}}</td>
+                <td>{{medicion.temp_pat5}}</td>
+                <td>{{medicion.temp_pat6}}</td>
+                <td>{{medicion.temp_pat7}}</td>
+                <td>{{medicion.temp_pat8}}</td>
+                <td>{{medicion.temp_pat9}}</td>
+                <td>{{medicion.temp_ebp0}}</td>
+                <td>{{medicion.temp_ebp1}}</td>
+                <td>{{medicion.temp_ebp2}}</td>
+                <td>{{medicion.temp_ebp3}}</td>
+                <td>{{medicion.temp_ebp4}}</td>
+                <td>{{medicion.temp_ebp5}}</td>
+                <td>{{medicion.temp_ebp6}}</td>
+                <td>{{medicion.temp_ebp7}}</td>
+                <td>{{medicion.temp_ebp8}}</td>
+                <td>{{medicion.temp_ebp9}}</td>
+
+               </tr>
+
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+   <body>
+     <h3>
+     <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+     </h3>
+      <h3>Carga de certificado del INTI </h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+
+         <label for = "name">Fecha de calibracion</label><br>
+         <input type = "text" name = "fecha" placeholder = "fecha" /><br>
+
+         <p>Valores del certificado del INTI</p>
+         <label for = "temp_n30">temp_n30</label><br>
+         <input type = "text" name = "temp_n30" placeholder = "temp_n30" /><br>
+         <label for = "correcion_n30">correcion_n30</label><br>
+         <input type = "text" name = "correcion_n30" placeholder = "correcion_n30" /><br>
+         <label for = "incert_n30">incert_n30</label><br>
+         <input type = "text" name = "incert_n30" placeholder = "incert_n30" /><br>
+         <label for = "temp_0">temp_0</label><br>
+         <input type = "text" name = "temp_0" placeholder = "temp_0" /><br>
+         <label for = "correcion_0">correcion_0</label><br>
+         <input type = "text" name = "correcion_0" placeholder = "correcion_0" /><br>
+         <label for = "incert_0">incert_0</label><br>
+         <input type = "text" name = "incert_0" placeholder = "incert_0" /><br>
+         <label for = "temp_37">temp_37</label><br>
+         <input type = "text" name = "temp_37" placeholder = "temp_37" /><br>
+         <label for = "correcion_37">correcion_37</label><br>
+         <input type = "text" name = "correcion_37" placeholder = "correcion_37" /><br>
+         <label for = "incert_37">incert_37</label><br>
+         <input type = "text" name = "incert_37" placeholder = "incert_37" /><br>
+         <label for = "temp_100">temp_100</label><br>
+         <input type = "text" name = "temp_100" placeholder = "temp_100" /><br>
+         <label for = "correcion_100">correcion_100</label><br>
+         <input type = "text" name = "correcion_100" placeholder = "correcion_100" /><br>
+         <label for = "incert_100">incert_100</label><br>
+         <input type = "text" name = "incert_100" placeholder = "incert_100" /><br>
+         <label for = "temp_200">temp_200</label><br>
+         <input type = "text" name = "temp_200" placeholder = "temp_200" /><br>
+         <label for = "correcion_200">correcion_200</label><br>
+         <input type = "text" name = "correcion_200" placeholder = "correcion_200" /><br>
+         <label for = "incert_200">incert_200</label><br>
+         <input type = "text" name = "incert_200" placeholder = "incert_200" /><br>
+
+         <input type = "submit" value = "Submit" />
+      </form>
+
+   </body>
+</html>

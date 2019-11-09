@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+      <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Listado de personas en la base de datos (<a href = "{{ url_for('Alta_persona') }}">Agregar persona
+         </a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+              <th>persona.id    </th>
+               <th>nombre    </th>
+               <th>email      </th>
+               <th>direccion  </th>
+               <th>telefono </th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for persona in personas %}
+               <tr>
+                 <td>{{ persona.id      }}</td>
+                  <td>{{ persona.nombre      }}</td>
+                  <td>{{ persona.telefono }}</td>
+                  <td>{{ persona.email      }}</td>
+                  <td>{{ persona.direccion }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>

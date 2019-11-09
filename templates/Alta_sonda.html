@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <body>
+     <h3>
+     <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+     </h3>
+
+      <h3>Alta sondas en el sistema </h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "nombre">nombre de la sonda</label><br>
+         <input type = "text" name = "nombre" placeholder = "nombre de la sonda" /><br>
+
+         <label for = "fecha_alta">fecha de alta de la sonda</label><br>
+         <input type = "text" name = "fecha_alta" placeholder = "fecha" /><br>
+
+         <label for = "observaciones">Observaciones</label><br>
+         <textarea name = "observaciones" placeholder = ""></textarea><br>
+
+         <input type = "submit" value = "Submit" />
+      </form>
+
+   </body>
+</html>

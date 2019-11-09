@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+         <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Listado de equipos en la base de datos (<a href = "{{ url_for('Alta_equipo') }}">Agregar un equipo</a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+              <th>equipo.id </th>
+                <th>nombre </th>
+               <th>marca </th>
+               <th>modelo </th>
+               <th>n_serie </th>
+               <th>observaciones</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for equipo in equipos %}
+               <tr>
+                 <td>{{ equipo.id }}</td>
+                 <td>{{ equipo.nombre }}</td>
+                  <td>{{ equipo.marca }}</td>
+                  <td>{{ equipo.modelo }}</td>
+                  <td>{{ equipo.n_serie }}</td>
+                  <td>{{ equipo.observaciones }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+      <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Listado de certificados en la base de datos</h3>
+
+      <table>
+         <thead>
+            <tr>
+               <th>id    </th>
+               <th>Equipo </th>
+               <th>Sonda </th>
+               <th>fecha    </th>
+               <th>temp    </th>
+               <th>correcion</th>
+               <th>incertidumbre    </th>
+
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for certificado in certificados %}
+               <tr>
+                  <td>{{ certificado.id      }}</td>
+                  <td>{{ certificado.medicion.equipo      }}</td>
+                  <td>{{ certificado.medicion.sonda      }}</td>
+                  <td>{{ certificado.Fecha_de_calibracion      }}</td>
+                  <td>{{ certificado.temp      }}</td>
+                  <td>{{ certificado.correcion      }}</td>
+                  <td>{{ certificado.incert      }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>

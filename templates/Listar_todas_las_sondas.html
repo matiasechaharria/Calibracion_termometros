@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+
+      <h3>
+         <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Listado de sondas en la base de datos (<a href = "{{ url_for('Alta_sonda') }}">Agregar sonda
+         </a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+                <th>sonda.id    </th>
+               <th>nombre    </th>
+               <th>fecha de alta     </th>
+               <th>observaciones  </th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for sonda in sondas %}
+               <tr>
+                 <td>{{ sonda.id}}</td>
+                  <td>{{ sonda.nombre}}</td>
+                  <td>{{ sonda.fecha_alta }}</td>
+                  <td>{{ sonda.observaciones }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+   </body>
+</html>

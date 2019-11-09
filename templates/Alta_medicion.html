@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <body>
+     <h3>
+     <a href = "{{ url_for('Indice') }}">Regresar al indice principal</a>
+     </h3>
+      <h3>Carga de mediciones en el sistema </h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+
+        <label for = "temp_ambiente">temp_ambiente</label><br>
+        <input type = "text" name = "temp_ambiente" placeholder = "temp_ambiente" /><br>
+
+        <label for = "humedad">humedad</label><br>
+        <input type = "text" name = "humedad" placeholder = "humedad"></input><br>
+
+        <label for = "persona_id">Persona</label><br>
+        <input type = "text" name = "persona_id" placeholder = "persona_id" /><br>
+
+        <label for = "ebp">Equipo</label><br>
+        <input type = "text" name = "ebp" placeholder = "ebp" /><br>
+
+        <label for = "sonda">sonda</label><br>
+        <input type = "text" name = "sonda" placeholder = "sonda" /><br>
+
+        <p>Mediciones del elemento bajo prueba</p>
+        <label for = "temp_ebp0">temperatura0</label><br>
+        <input type = "text" name = "temp_ebp0" placeholder = "temp_ebp0" /><br>
+        <label for = "temp_ebp1">temperatura1</label><br>
+        <input type = "text" name = "temp_ebp1" placeholder = "temp_ebp1" /><br>
+        <label for = "temp_ebp2">temperatura2</label><br>
+        <input type = "text" name = "temp_ebp2" placeholder = "temp_ebp2" /><br>
+        <label for = "temp_ebp3">temperatura3</label><br>
+        <input type = "text" name = "temp_ebp3" placeholder = "temp_ebp3" /><br>
+        <label for = "temp_ebp4">temperatura4</label><br>
+        <input type = "text" name = "temp_ebp4" placeholder = "temp_ebp4" /><br>
+        <label for = "temp_ebp5">temperatura5</label><br>
+        <input type = "text" name = "temp_ebp5" placeholder = "temp_ebp5" /><br>
+        <label for = "temp_ebp6">temperatura6</label><br>
+        <input type = "text" name = "temp_ebp6" placeholder = "temp_ebp6" /><br>
+        <label for = "temp_ebp7">temperatura7</label><br>
+        <input type = "text" name = "temp_ebp7" placeholder = "temp_ebp7" /><br>
+        <label for = "temp_ebp8">temperatura8</label><br>
+        <input type = "text" name = "temp_ebp8" placeholder = "temp_ebp8" /><br>
+        <label for = "temp_ebp9">temperatura9</label><br>
+        <input type = "text" name = "temp_ebp9" placeholder = "temp_ebp9" /><br>
+
+        <p>Mediciones del patron</p>
+        <label for = "temp_pat0">temperatura0</label><br>
+        <input type = "text" name = "temp_pat0" placeholder = "temp_pat0" /><br>
+        <label for = "temp_pat1">temperatura1</label><br>
+        <input type = "text" name = "temp_pat1" placeholder = "temp_pat1" /><br>
+        <label for = "temp_pat2">temperatura2</label><br>
+        <input type = "text" name = "temp_pat2" placeholder = "temp_pat2" /><br>
+        <label for = "temp_pat3">temperatura3</label><br>
+        <input type = "text" name = "temp_pat3" placeholder = "temp_pat3" /><br>
+        <label for = "temp_pat4">temperatura4</label><br>
+        <input type = "text" name = "temp_pat4" placeholder = "temp_pat4" /><br>
+        <label for = "temp_pat5">temperatura5</label><br>
+        <input type = "text" name = "temp_pat5" placeholder = "temp_pat5" /><br>
+        <label for = "temp_pat6">temperatura6</label><br>
+        <input type = "text" name = "temp_pat6" placeholder = "temp_pat6" /><br>
+        <label for = "temp_pat7">temperatura7</label><br>
+        <input type = "text" name = "temp_pat7" placeholder = "temp_pat7" /><br>
+        <label for = "temp_pat8">temperatura8</label><br>
+        <input type = "text" name = "temp_pat8" placeholder = "temp_pat8" /><br>
+        <label for = "temp_pat9">temperatura9</label><br>
+        <input type = "text" name = "temp_pat9" placeholder = "temp_pat9" /><br>
+
+
+        <input type = "submit" value = "Submit" />
+      </form>
+
+   </body>
+</html>

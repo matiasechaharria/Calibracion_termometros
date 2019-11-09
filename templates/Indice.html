@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+   <head>
+      <title>Sistema de calibracion de termometros</title>
+   </head>
+   <body>
+
+        <h1>Sistema de calibracion de termometros</h1>
+
+        <p>Certificados</p>
+        <p>Cargar certificados del INTI. <a href = "{{ url_for('Alta_certificado') }}">
+        <b>cargar</b></a></p>
+        <p>Listado de todos los certificados internos. <a href = "{{ url_for('Listar_todos_los_certificados') }}">
+        <b>Listar</b></a></p>
+
+        <p>Mediciones</p>
+        <p>Cargar mediciones. <a href = "{{ url_for('Alta_medicion') }}">
+        <b>cargar</b></a></p>
+        <p>Listado de todas las mediciones. <a href = "{{ url_for('Listar_todas_las_mediciones') }}">
+        <b>Listar</b></a></p>
+
+        <p>Personas</p>
+        <p>Alta de personas. <a href = "{{ url_for('Alta_persona') }}">
+        <b>cargar</b></a></p>
+        <p>Listado de todas las personas. <a href = "{{ url_for('Listar_todas_las_personas') }}">
+        <b>Listar</b></a></p>
+
+        <p>Equipos</p>
+        <p>Alta de equipos. <a href = "{{ url_for('Alta_equipo') }}">
+        <b>cargar</b></a></p>
+        <p>Listado de todos los equipos. <a href = "{{ url_for('Listar_todos_los_equipos') }}">
+        <b>Listar</b></a></p>
+
+        <p>Sondas</p>
+        <p>Alta de sondas. <a href = "{{ url_for('Alta_sonda') }}">
+        <b>cargar</b></a></p>
+        <p>Listado de todas las sondas. <a href = "{{ url_for('Listar_todas_las_sondas') }}">
+        <b>Listar</b></a></p>
+        <p>Historico de sondas. <a href = "{{ url_for('Historico_sondas') }}">
+        <b>Imprimir pdf</b></a></p>
+
+   </body>
+</html>
